@@ -2,21 +2,69 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
+.logo{
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+    transition: width 0.3s ease;
+
+}
+.logo:hover{
+    transform: scale(1.5);
+}
+
+/* Animación de rotación */
+.rotate {
+    background-color: #4caf50;
+    animation: rotate 4s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+p{
+    text-align: justify;
+    padding: 20px;
+}
+
+button{
+    background-color: blue;
+    transition: all 0.5s ease-out;
+}
+button:hover{
+    background-color: green;
+    font-size: 1.5em;
+}
+
 nav{
     /* display:block; */
     grid-area: menu;
-    background-color: darkblue;
-    color: white;   
+    background-color:skyblue;
+    color: darkgray;   
+    /* background-image: url('../img/cielo.avif');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    position: relative; */
 
 }
 nav li{
     list-style: none;
+    color:darkblue;
+
 }
 nav a{
-    color: white;
+    color:darkblue;
+
 }
 nav a:hover{
-    color:aqua;
+    font-size: 1.5em;
 }
 nav a:focus{
     color: black;
@@ -25,6 +73,30 @@ nav a:active{
     color:gray;
 }
 
+h1{
+    animation: move 3s infinite;
+    animation-direction: alternate;
+
+}
+@keyframes move {
+    0% {
+        transform: translateX(-200px);
+      }
+      25% {
+      transform: translateX(0);
+      /* transform: rotate(90deg); */
+      }
+      50% {
+      transform: translateX(200px);
+      
+      } 75% {
+      transform: translateX(0);
+      }
+      100% {
+      transform: translateX(-200px);
+      /* transform: rotate(180deg); */
+      }
+   }
 button{
     background-color: blue;
     color: white;
@@ -39,11 +111,15 @@ button{
     justify-content:space-around;
 }
 aside{
-    grid-area: buscador;
-    background-color: gray;
+    grid-area: 'leyenda';
+    background-color: rgb(249, 244, 244);
     text-align: center;
+    /* color: green; */
     padding: 10px;
-    
+    background-image: url('../img/cielo.avif');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    position: relative;
 }
 
 footer{
@@ -66,10 +142,10 @@ main{
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-areas: 
-    'menu buscador'
+    'menu leyenda'
     'menu principal'
     'menu principal'
-    'pie  principal' ;
+    'pie pie' ;
 }
 
 .listmenu{
@@ -81,7 +157,7 @@ main{
         grid-template-columns: 1fr;
         grid-template-areas: 
         'menu'
-        'buscador'
+        'leyenda'
         'principal'
         'pie';
     }   
@@ -90,9 +166,14 @@ main{
         display: block;
     }
     
+    .navbar:active,:focus{
+       .listmenu{
+        display: block;
+       }   
+    }
     .listmenu{
         display: none;   
-       }
+    }
 }
 
 @media (min-width:576px){
@@ -101,9 +182,9 @@ main{
         grid-template-columns: 1fr 3fr;
         /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas: 
-        'menu buscador'
+        'menu leyenda'
         'menu principal'
-        'pie principal';
+        'pie pie';
     }
     .navbar{
         display: none;
@@ -118,9 +199,9 @@ main{
         grid-template-columns: 1fr 3fr;
         /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas: 
-        'menu buscador'
+        'menu leyenda'
         'menu principal'
-        'pie principal';
+        'pie pie';
     }
 
     .navbar{
@@ -135,9 +216,9 @@ main{
         grid-template-columns: 1fr 3fr;
         /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas: 
-        'menu buscador'
+        'menu leyenda'
         'menu principal'
-        'pie principal';
+        'pie pie';
     }
     .navbar{
         display: none;
@@ -151,9 +232,9 @@ main{
         grid-template-columns: 1fr 3fr;
         /* grid-template-rows: 1fr 1fr 1fr; */
         grid-template-areas: 
-        'menu buscador'
+        'menu leyenda'
         'menu principal'
-        'pie principal';
+        'pie pie';
     }
     .navbar{
         display: none;
